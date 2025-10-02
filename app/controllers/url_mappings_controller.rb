@@ -1,5 +1,6 @@
 require "zlib"
 require "base64"
+require "uri"
 
 class UrlMappingsController < ApplicationController
   def new
@@ -25,7 +26,12 @@ class UrlMappingsController < ApplicationController
     begin
       compressed_url = Base64.urlsafe_decode64(params[:id])
       original_url = Zlib::Inflate.inflate(compressed_url)
-      redirect_to original_url, allow_other_host: true
+      uri = URI.parse(original_url)
+      if uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
+        redirect_to original_url, allow_other_host: true
+      else
+        render plain: "Invalid URL", status: :unprocessable_entity
+      end
     rescue
       render plain: "Not Found", status: :not_found
     end
