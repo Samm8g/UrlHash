@@ -1,0 +1,12 @@
+<p>URL was successfully Hashed.</p>
+
+<p>
+  <strong>Original URL:</strong>
+  <%= @url_mapping.original_url %>
+</p>
+
+<p>
+  <strong>Hashed URL:</strong>
+  <% short_url = redirect_url(id: @url_mapping.short_url) %>
+  <%= link_to short_url, short_url %>
+</p>
