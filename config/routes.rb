@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "url_mappings#new"
 
-  resources :url_mappings, only: [:new, :create]
+  resources :url_mappings, only: [ :new, :create ]
   get "/:id", to: "url_mappings#redirect", as: :redirect
 end

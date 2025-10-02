@@ -1,5 +1,5 @@
-require 'zlib'
-require 'base64'
+require "zlib"
+require "base64"
 
 class UrlMappingsController < ApplicationController
   def new
