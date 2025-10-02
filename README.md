@@ -18,7 +18,7 @@ When a user visits a shortened URL, the application decodes the hash back to the
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Samm8g/UrlHash.git
     ```
 2.  **Install dependencies:**
     ```bash
