@@ -1,24 +1,32 @@
-# README
+# URL Hash - A Stateless URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple URL shortener application built with Ruby on Rails. It's a showcase project that demonstrates a unique, stateless approach to URL shortening.
 
-Things you may want to cover:
+## How it works
 
-* Ruby version
+Instead of storing the original URL in a database and providing a short ID, this application encodes the original URL directly into a hash. The hash is a compressed and Base64-encoded version of the original URL.
 
-* System dependencies
+When a user visits a shortened URL, the application decodes the hash back to the original URL and redirects the user.
 
-* Configuration
+## Features
 
-* Database creation
+-   Stateless design: No database is used for URL mappings.
+-   Simple and lightweight.
+-   Built with Ruby on Rails.
 
-* Database initialization
+## Setup and Usage
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    ```
+2.  **Install dependencies:**
+    ```bash
+    bundle install
+    ```
+3.  **Run the Rails server:**
+    ```bash
+    rails server
+    ```
+4.  **Open your browser:**
+    Navigate to `http://localhost:3000` to use the application.
